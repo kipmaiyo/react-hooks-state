@@ -1,13 +1,31 @@
 import React, { useState } from "react";
 
 function Counter() {
-  const [count, setCount] = useState(0);
+  const [currentCount, setCount] = useState(0);
 
+  
   function increment() {
-    setCount(count + 1);
+    setCount((currentCount) => currentCount + 1);
+    console.log(currentCount)
   }
 
-  return <button onClick={increment}>I have been clicked {count} times</button>;
-}
+  const counterStyle = {
+    color: "purple",
+    fontSize: "240px", 
+    cursor: "pointer",
+    display: "flex",
+    alignItems: 'center',
+        justifyContent: 'center',
+    
+  };
 
+  return <div style={counterStyle} onClick={increment}>{currentCount}</div>;  
+}
 export default Counter;
+
+
+
+
+
+
+
